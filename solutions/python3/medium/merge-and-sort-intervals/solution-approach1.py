@@ -7,6 +7,12 @@
 # Language    python3
 # Status      Accepted
 # Submitted   2026-09-06, 05:30 p.m.
+# Technique   sorting-and-linear-scan
+# Time        O(N log N)
+# Space       O(N)
+# Insight     The algorithm maintains a list of merged intervals by sorting the input by start time and greedily extending the last interval in the result list whenever an overlap is detected.
+# Interview   Before: "I would use a nested loop to compare every interval against every other interval." After: "Sorting by start time allows a single linear pass to merge all overlapping intervals in O(N log N) time, which is optimal for this problem."
+# Pitfalls    (1) Failing to handle the empty input case, which results in an index error when accessing intervals[0].  (2) Forgetting to sort the intervals by start time, which breaks the greedy merge logic.  (3) Using an incorrect overlap condition, such as strictly less than instead of less than or equal to, which fails to merge adjacent intervals.
 # ──────────────────────────────────────────────────
 
 #!/bin/python3
