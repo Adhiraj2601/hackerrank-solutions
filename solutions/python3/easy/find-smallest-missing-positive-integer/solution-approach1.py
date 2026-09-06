@@ -7,6 +7,12 @@
 # Language    python3
 # Status      Accepted
 # Submitted   2026-09-06, 05:25 p.m.
+# Technique   hash-set-lookup
+# Time        O(n)
+# Space       O(n)
+# Insight     The algorithm identifies the smallest missing positive integer by checking consecutive integers starting from one against a hash set containing all elements of the input array.
+# Interview   Before: "I could sort the array and scan for the first gap, which takes O(n log n) time." After: "By using a hash set to store elements, I can achieve O(n) time complexity, though it requires O(n) extra space to handle the lookup efficiently."
+# Pitfalls    (1) The implementation uses O(n) space, which violates the O(1) extra space constraint specified in the problem description.  (2) Failing to handle the empty array case correctly would return an incorrect result, though this code explicitly returns 1 for an empty input.
 # ──────────────────────────────────────────────────
 
 #!/bin/python3
