@@ -7,6 +7,11 @@
 # Language    python3
 # Status      Accepted
 # Submitted   2026-09-06, 05:25 p.m.
+# Technique   running-average-tracking
+# Time        O(n)
+# Space       O(1)
+# Insight     The algorithm maintains a running average by updating the mean incrementally using the count of elements processed so far.
+# Pitfalls    (1) Using floating-point division instead of integer division, which violates the problem's implicit requirement for integer-based average calculations.  (2) Failing to handle the n=0 case, which causes an index error when accessing responseTimes[0].  (3) Incorrectly updating the running average by using the wrong count variable, leading to an inaccurate mean for subsequent comparisons.
 # ──────────────────────────────────────────────────
 
 #!/bin/python3
